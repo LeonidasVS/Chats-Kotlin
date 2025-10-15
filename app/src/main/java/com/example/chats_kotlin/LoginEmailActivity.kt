@@ -32,7 +32,7 @@ class LoginEmailActivity : AppCompatActivity() {
 
         firebaseAuth=FirebaseAuth.getInstance()
         progressDialog=ProgressDialog(this)
-        
+
         //Tocar el textView de registro
         binding.Registrar.setOnClickListener {
             startActivity(Intent(applicationContext, RegistroMailActivity::class.java))
