@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "212219351369",
+    "firebase_url": "https://chast-kotlin-default-rtdb.firebaseio.com",
+    "project_id": "chast-kotlin",
+    "storage_bucket": "chast-kotlin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212219351369:android:0001612f216ddcb7e48a98",
+        "android_client_info": {
+          "package_name": "com.example.chats_kotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmITfN9GxujAcumeHhdrNNtoEzgfM1MP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
