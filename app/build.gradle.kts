@@ -51,6 +51,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+    implementation("com.google.android.gms:play-services-auth:21.4.0")
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
     testImplementation(libs.junit)
