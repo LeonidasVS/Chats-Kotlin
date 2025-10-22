@@ -111,6 +111,7 @@ class OpcionesLoginActivity : AppCompatActivity() {
         datosUsuarios["tiempoR"]="${tiempoR}"
         datosUsuarios["proveedor"]="Google"
         datosUsuarios["estado"]="Online"
+        datosUsuarios["imagen"]=""
 
         //Guardar informacion en firebase
 

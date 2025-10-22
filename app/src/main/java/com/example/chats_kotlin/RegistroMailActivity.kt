@@ -110,6 +110,7 @@ class RegistroMailActivity : AppCompatActivity() {
         datosUsuarios["tiempoR"]="${tiempoR}"
         datosUsuarios["proveedor"]="Email"
         datosUsuarios["estado"]="Online"
+        datosUsuarios["imagen"]=""
 
         //Guardar informacion en firebase
 

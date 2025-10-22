@@ -10,9 +10,13 @@ import com.example.chats_kotlin.databinding.FragmentPerfilBinding
 import com.google.firebase.auth.FirebaseAuth
 import android.content.Context
 import android.content.Intent
+import com.google.firebase.database.FirebaseDatabase
 
 import android.widget.Toast
 import com.example.chats_kotlin.OpcionesLoginActivity
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 class FragmentPerfil : Fragment() {
 
@@ -36,6 +40,8 @@ class FragmentPerfil : Fragment() {
         //Inflar el layout para mostrar el layout
         binding=FragmentPerfilBinding.inflate(layoutInflater,container, false)
 
+        cargarInformacion()
+
         //Funcion cerrar sesion del usuario
         binding.btnCerrarSesion.setOnClickListener {
             firebaseAuth.signOut()
@@ -44,5 +50,30 @@ class FragmentPerfil : Fragment() {
         }
 
         return binding.root
+    }
+
+    private fun cargarInformacion() {
+        var ref=FirebaseDatabase.getInstance().getReference("usuarios")
+        ref.child("${firebaseAuth}")
+            .addValueEventListener(object :  ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val nombres="${snapshot.child("nombres").value}"
+                    val email="${snapshot.child("email").value}"
+                    val estado="${snapshot.child("estado").value}"
+                    val proveedor="${snapshot.child("proveedor").value}"
+                    var tiempoR="${snapshot.child("tiempoR").value}"
+                    val imagen="${snapshot.child("imagen").value}"
+
+                    //Condicion del tiempo
+                    if(tiempoR==null){
+                        tiempoR="0";
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
     }
 }
