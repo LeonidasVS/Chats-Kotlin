@@ -18,6 +18,4 @@ class FragmentChats : Fragment() {
         return inflater.inflate(R.layout.fragment_chats, container, false)
     }
 
-
-
 }

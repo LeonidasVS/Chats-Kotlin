@@ -1,21 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragmentos.FragmentPerfil">
+    tools:context=".Fragmentos.FragmentChats"
+    android:padding="15dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_CerrarSesion"
-        android:layout_gravity="center"
-        android:layout_width="250dp"
-        android:textAllCaps="true"
-        android:textSize="16sp"
-        android:drawableEnd="@drawable/ic_logout"
-        app:cornerRadius="8dp"
-        android:layout_height="wrap_content"
-        android:text="@string/cerrar_Sesion"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/iv_perfil"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_image_perfil"/>
+
+        <TextView
+            android:id="@+id/txt_nombres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_perfil"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_nombres"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/tv_nombres"
+            android:layout_below="@+id/iv_perfil"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_nombres"/>
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_nombres"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_email"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_below="@+id/txt_nombres"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_email"/>
+
+        <TextView
+            android:id="@+id/txt_proveedor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_email"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_proveedor"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_proveedor"
+            android:layout_below="@+id/txt_email"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_provedorr"/>
+
+
+        <TextView
+            android:id="@+id/txt_t_registro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_proveedor"
+            android:layout_marginTop="20dp"
+            android:text="@string/txt_t_registro"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_t_registro"
+            android:layout_below="@+id/txt_proveedor"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_t_registro"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="8dp"
+            android:text="@string/cerrar_Sesion"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:layout_below="@id/txt_t_registro"
+            android:layout_marginTop="25dp"
+            android:id="@+id/btnCerrarSesion"
+            android:layout_centerInParent="true"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="8dp"
+            android:text="Actualizar"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:layout_below="@+id/btnCerrarSesion"
+            android:id="@+id/actualizarPerfil"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+</ScrollView>

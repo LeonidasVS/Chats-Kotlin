@@ -1,103 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragmentos.FragmentChats"
-    android:padding="15dp">
+    tools:context=".Fragmentos.FragmentUsuarios">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="CHATS"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        />
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:id="@+id/iv_perfil"
-            android:layout_marginTop="20dp"
-            android:scaleType="centerCrop"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_image_perfil"/>
-
-        <TextView
-            android:id="@+id/txt_nombres"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_perfil"
-            android:layout_marginTop="20dp"
-            android:text="@string/txt_nombres"/>
-
-        <TextView
-            android:id="@+id/tv_nombres"
-            android:layout_below="@+id/iv_perfil"
-            android:layout_marginTop="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_nombres"/>
-
-        <TextView
-            android:id="@+id/txt_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_nombres"
-            android:layout_marginTop="20dp"
-            android:text="@string/txt_email"/>
-
-        <TextView
-            android:id="@+id/tv_email"
-            android:layout_below="@+id/txt_nombres"
-            android:layout_marginTop="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_email"/>
-
-        <TextView
-            android:id="@+id/txt_proveedor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_email"
-            android:layout_marginTop="20dp"
-            android:text="@string/txt_proveedor"/>
-
-        <TextView
-            android:id="@+id/tv_proveedor"
-            android:layout_below="@+id/txt_email"
-            android:layout_marginTop="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_provedorr"/>
-
-
-        <TextView
-            android:id="@+id/txt_t_registro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_proveedor"
-            android:layout_marginTop="20dp"
-            android:text="@string/txt_t_registro"/>
-
-        <TextView
-            android:id="@+id/tv_t_registro"
-            android:layout_below="@+id/txt_proveedor"
-            android:layout_marginTop="20dp"
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_t_registro"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cornerRadius="8dp"
-            android:text="@string/cerrar_Sesion"
-            android:gravity="center"
-            android:textAllCaps="true"
-            android:layout_below="@id/txt_t_registro"
-            android:layout_marginTop="25dp"
-            android:layout_centerInParent="true"/>
-    </RelativeLayout>
-</ScrollView>
+</FrameLayout>

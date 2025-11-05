@@ -72,8 +72,12 @@ class OpcionesLoginActivity : AppCompatActivity() {
     }
 
     private fun signInWithGoogle() {
-        val googleSignIntent=mGoogleSignInClient.signInIntent
-        googleSignInActivityResultLauncher.launch(googleSignIntent)
+        // Cerrar sesión de Google para forzar la selección de cuenta
+        mGoogleSignInClient.signOut().addOnCompleteListener(this) {
+            // Iniciar el flujo de inicio de sesión después de cerrar sesión
+            val googleSignIntent = mGoogleSignInClient.signInIntent
+            googleSignInActivityResultLauncher.launch(googleSignIntent)
+        }
     }
 
     private val googleSignInActivityResultLauncher=registerForActivityResult(
@@ -130,18 +134,18 @@ class OpcionesLoginActivity : AppCompatActivity() {
 
     private fun autenticarCuentaGoogle(idToken: String?) {
         val credencial=GoogleAuthProvider.getCredential(idToken,null)
-            firebaseAuth.signInWithCredential(credencial)
-                .addOnSuccessListener { authResultado->
-                    if(authResultado.additionalUserInfo!!.isNewUser){
-                        actualizarInfoUsuario()
-                    }else{
-                        startActivity(Intent(this, MainActivity::class.java))
-                    }
+        firebaseAuth.signInWithCredential(credencial)
+            .addOnSuccessListener { authResultado->
+                if(authResultado.additionalUserInfo!!.isNewUser){
+                    actualizarInfoUsuario()
+                }else{
+                    startActivity(Intent(this, MainActivity::class.java))
                 }
+            }
 
-                .addOnFailureListener { e->
-                    Toast.makeText(this, "Error "+e.message, Toast.LENGTH_SHORT).show()
-                }
+            .addOnFailureListener { e->
+                Toast.makeText(this, "Error "+e.message, Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun comprobarSesion() {
